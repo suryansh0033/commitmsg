@@ -91,7 +91,7 @@ export default function Home() {
         )}
 
         {/* Footer */}
-        <p className="text-center text-gray-700 text-xs mt-12">built with groq · llama 4 maverick</p>
+        
       </div>
     </main>
   );
