@@ -48,7 +48,7 @@ export default function Home() {
     <p><span className="text-green-400 font-mono">Step 2</span> — Open terminal in your project folder</p>
     <p><span className="text-green-400 font-mono">Step 3</span> — Run this command:</p>
     <pre className="bg-gray-950 rounded-lg px-3 py-2 font-mono text-green-400 mt-1">git diff</pre>
-    <p><span className="text-green-400 font-mono">Step 4</span> — Copy the output and paste it above</p>
+    <p><span className="text-green-400 font-mono">Step 4</span> — Copy the output and paste it in the box below</p>
     <p className="text-gray-600 mt-2">Using GitHub Desktop? Click on any changed file to see the diff, then copy it.</p>
   </div>
 </details>
