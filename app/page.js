@@ -41,6 +41,17 @@ export default function Home() {
         <div className="mb-10 text-center">
           <h1 className="text-4xl font-bold mb-2">CommitMsg <span className="text-green-400">AI</span></h1>
           <p className="text-gray-400 text-sm">Paste your git diff → get 5 perfect commit messages instantly</p>
+<details className="mt-3 text-left bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 cursor-pointer">
+  <summary className="text-xs text-gray-500 hover:text-gray-300 transition-colors">How to get your git diff? ↓</summary>
+  <div className="mt-3 space-y-2 text-xs text-gray-400">
+    <p><span className="text-green-400 font-mono">Step 1</span> — Make changes to your code</p>
+    <p><span className="text-green-400 font-mono">Step 2</span> — Open terminal in your project folder</p>
+    <p><span className="text-green-400 font-mono">Step 3</span> — Run this command:</p>
+    <pre className="bg-gray-950 rounded-lg px-3 py-2 font-mono text-green-400 mt-1">git diff</pre>
+    <p><span className="text-green-400 font-mono">Step 4</span> — Copy the output and paste it above</p>
+    <p className="text-gray-600 mt-2">Using GitHub Desktop? Click on any changed file to see the diff, then copy it.</p>
+  </div>
+</details>
         </div>
 
         {/* Input */}
