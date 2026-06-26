@@ -7,6 +7,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(null);
   const [error, setError] = useState("");
+  const [showGuide, setShowGuide] = useState(false);
 
   async function generate() {
     if (!diff.trim()) return;
@@ -41,17 +42,25 @@ export default function Home() {
         <div className="mb-10 text-center">
           <h1 className="text-4xl font-bold mb-2">CommitMsg <span className="text-green-400">AI</span></h1>
           <p className="text-gray-400 text-sm">Paste your git diff → get 5 perfect commit messages instantly</p>
-<details className="mt-3 text-left bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 cursor-pointer">
-  <summary className="text-xs text-gray-500 hover:text-gray-300 transition-colors">How to get your git diff? ↓</summary>
-  <div className="mt-3 space-y-2 text-xs text-gray-400">
-    <p><span className="text-green-400 font-mono">Step 1</span> — Make changes to your code</p>
-    <p><span className="text-green-400 font-mono">Step 2</span> — Open terminal in your project folder</p>
-    <p><span className="text-green-400 font-mono">Step 3</span> — Run this command:</p>
-    <pre className="bg-gray-950 rounded-lg px-3 py-2 font-mono text-green-400 mt-1">git diff</pre>
-    <p><span className="text-green-400 font-mono">Step 4</span> — Copy the output and paste it in the box below</p>
-    <p className="text-gray-600 mt-2">Using GitHub Desktop? Click on any changed file to see the diff, then copy it.</p>
-  </div>
-</details>
+<div className="mt-4 w-full max-w-2xl mx-auto">
+  <button
+    onClick={() => setShowGuide(!showGuide)}
+    className="w-full flex items-center justify-between bg-gray-900 border border-gray-800 hover:border-green-500 rounded-xl px-4 py-3 transition-colors"
+  >
+    <span className="text-sm text-gray-400">📖 How to get your git diff?</span>
+    <span className="text-green-400 text-xs">{showGuide ? "▲ hide" : "▼ show"}</span>
+  </button>
+  {showGuide && (
+    <div className="bg-gray-900 border border-gray-800 border-t-0 rounded-b-xl px-4 py-4 space-y-2 text-xs text-gray-400">
+      <p><span className="text-green-400 font-mono">Step 1</span> — Make changes to your code</p>
+      <p><span className="text-green-400 font-mono">Step 2</span> — Open terminal in your project folder</p>
+      <p><span className="text-green-400 font-mono">Step 3</span> — Run this command:</p>
+      <pre className="bg-gray-950 rounded-lg px-3 py-2 font-mono text-green-400">git diff</pre>
+      <p><span className="text-green-400 font-mono">Step 4</span> — Copy the output and paste it in the box below</p>
+      <p className="text-gray-600 mt-2">Using GitHub Desktop? Click on any changed file to see the diff, then copy it.</p>
+    </div>
+  )}
+</div>
         </div>
 
         {/* Input */}
